@@ -195,7 +195,9 @@ sup {
 #temp_status {
   font-size: 40px;
 }
-
+.main_content {
+  width: 350px;
+}
 @media (max-width: 768px) {
   #errorImage {
     max-width: 400px;
@@ -273,7 +275,7 @@ sup {
   }
   #today_data {
     margin-top: 10px;
-    font-size:10px;
+    font-size: 10px;
   }
   #day {
     margin-top: 20px;
@@ -287,6 +289,7 @@ sup {
     font-size: 14px;
     border: none;
   }
+ 
 
   /* Style for the search button */
   #submitBtn {
@@ -294,5 +297,30 @@ sup {
     color: white;
     border: none;
     padding: 8px 16px;
+  }
+}
+@media(max-width:370px){
+  .main_content {
+    width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #city_name {
+    background-color: #0a0d41;
+    color: white;
+    flex-grow: 1;
+    border: none;
+    padding: 7px 17px;
+    font-size: 14px;
+    border: none;
+  }
+  
+  /* Style for the search button */
+  #submitBtn {
+    background-color: #009ad8;
+    color: white;
+    border: none;
+    padding: 7px 17px;
   }
 }
