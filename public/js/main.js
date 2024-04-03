@@ -53,10 +53,26 @@ const getInfo = async (event) => {
     if (!response.ok) {
       throw new Error(`API request failed with status ${response.status}`);
     }
-    const weatherData = await response.json();
-    outputToShow.innerText = `${weatherData.name}, ${weatherData.sys.country}`;
-    forDegree.innerText = weatherData.main.temp;
+    const jsonData = await response.json();
+    const arrData = [jsonData];
+    outputToShow.innerText = `${arrData[0].name},${arrData[0].sys.country}`;
+    forDegree.innerText = arrData[0].main.temp;
     // ... (unchanged temperature status logic based on weatherData)
+    const checkTempStatus =  arrData[0].weather[0].main;
+    //condition to check sunny or cloudy
+    if (checkTempStatus == "Sunny") {
+      getTempStatus.innerHTML =
+        "<i class='fas  fa-sun' style='color: #F5B027;'></i>";
+    } else if (checkTempStatus == "Clouds") {
+      getTempStatus.innerHTML =
+        "<i class='fas  fa-cloud' style='color: #f1f2f6;'></i>";
+    } else if (checkTempStatus == "Rainy") {
+      getTempStatus.innerHTML =
+        "<i class='fas  fa-cloud-rain' style='color: #a4b0be;'></i>";
+    } else {
+      getTempStatus.innerHTML =
+        "<i class='fas  fa-cloud' style='color:#f1f2f6;'></i>";
+    }
     data_Hide.classList.remove("data_hide");
   } catch (error) {
     outputToShow.innerText = "Enter the Correct City name";
