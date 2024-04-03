@@ -301,7 +301,7 @@ sup {
 }
 @media(max-width:370px){
   .main_content {
-    width: 280px;
+    width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -321,6 +321,7 @@ sup {
     background-color: #009ad8;
     color: white;
     border: none;
-    padding: 7px 17px;
+    padding:10px 18px;
+    font-size:12px;
   }
 }
