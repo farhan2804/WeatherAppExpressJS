@@ -238,7 +238,7 @@ sup {
   }
   .temp_form {
     display: flex;
-    max-width: 350px;
+    max-width: 270px;
     border-radius: 25px;
     overflow: hidden;
     border: none;
